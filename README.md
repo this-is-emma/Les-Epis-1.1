@@ -1,24 +1,19 @@
-# README
+# Les Epis
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Les Epis! This web application is designed to collect pledges to support various campaigns that aim to empower communities and underrepresented groups. The platform features user authentication to ensure secure access for pledge creators and contributors.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- User registration and authentication system.
+- Campaign creation and management.
+- Pledge submission and tracking.
+- Dashboard to view campaign progress and statistics.
+- Admin panel for managing campaigns and users.
 
-* System dependencies
+## Technologies Used
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Ruby on Rails: The web application framework used to build the platform.
+- HTML, CSS, JavaScript: Front-end technologies for creating the user interface and interactions.
+- Bootstrap: CSS framework for responsive and visually appealing designs.
+- Devise: Ruby gem for handling user authentication and registration.
+- PostgreSQL: Database management system for data storage.
