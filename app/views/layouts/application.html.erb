@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LesEpis</title>
+    <title>Les Epis</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=League Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin Sans">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <body class='body'>
+    <header>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <nav class='nav-bar'>
+        <h1 class='nav-bar-h1'>Les ÉPIS</h1>
+        <h2 class='nav-bar-h2'>Giving back to communities<h2>
+        <div class='nav-bar-links'>
+          <%= link_to 'Home', root_path%>
+          <%= link_to 'Sign in', new_user_session_path%>
+          <%= link_to 'Campaigns', campaigns_index_path%>
+          <a href="#">About</a>
+          <%# SET UP A - My Account for when user is signed in %>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
+    <footer class='footer'>
+      <h5>A family initiative</h5>
+      <p>EmmaLabs | Background image from Unsplash</p>
+    </footer>
   </body>
 </html>

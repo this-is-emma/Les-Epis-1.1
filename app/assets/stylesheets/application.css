@@ -13,3 +13,71 @@
  *= require_tree .
  *= require_self
  */
+
+ .body {
+    background-image: url('bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Josefin Sans';
+    padding-bottom: 2rem;
+
+ }
+
+ /* --------------   Nav Bar Styles 👇 ------------------ */
+
+ .nav-bar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem
+ }
+
+ .nav-bar-h1{
+    font-weight: lighter;
+    color: rgb(209,133,0);
+    font-size: 3em;
+ }
+
+ .nav-bar-h2{
+    font-family: "League Script";
+    font-size: 2.5em;
+    /* margin: 0.8em; */
+    color: teal;
+    font-weight: lighter;
+ }
+
+ .nav-bar-links{
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+ }
+
+ .nav-bar-links > a {
+    text-decoration: none;
+    color: white;
+    transition: all 1s ease-out;
+ }
+
+ .nav-bar-links > a:hover {
+    text-decoration: none;
+    color: rgb(209,133,0);
+    transition: all 1s ease-out;
+ }
+ /* End of Nav bar styles ! */
+
+/* -----------------------Footer styles 👇--------------------------- */
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: lighter;
+}
+
+ /* Footer styles over*/
