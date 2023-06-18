@@ -5,6 +5,7 @@ class CampaignsController < ApplicationController
 
   def show
     @campaign = Campaign.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -13,9 +14,10 @@ class CampaignsController < ApplicationController
 
   def create
     @campaign = Campaign.new(campaign_params)
-    @campaign.user_id = current_user
+    @campaign.user_id = current_user.id
 
     if @campaign.save
+      flash[:notice] = 'Campaign created successfully.'
       redirect_to(campaign_path(@campaign))
     else
       render(
@@ -33,7 +35,8 @@ class CampaignsController < ApplicationController
     @campaign = Campaign.find(params[:id])
 
     if @campaign.update(campaign_params)
-      redirect_to(campaign_path(@campaign), flash: { success: 'Campaign updated successfully' })
+      flash[:notice] = 'campaign updated successfully'
+      redirect_to(campaign_path(@campaign))
     else
       render(:edit, status: :unprocessable_entity)
     end
@@ -42,7 +45,7 @@ class CampaignsController < ApplicationController
   def destroy
     @campaign = Campaign.find(params[:id])
     @campaign.destroy!
-
+    flash[:notice] = 'Campaign deleted successfully'
     redirect_to(campaigns_path)
   end
 

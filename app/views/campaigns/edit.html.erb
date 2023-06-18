@@ -1,2 +1,30 @@
-<h1>Campaigns#edit</h1>
-<p>Find me in app/views/campaigns/edit.html.erb</p>
+<div class="card m-3 p-4">
+    <p>Edit <strong><%= @campaign.name%></strong></p>
+    <%= form_with(model: @campaign) do |f| %>
+        <% if @campaign.errors.any? %>
+            <div class="alert alert-warning">
+                <h2><%= pluralize(@campaign.error.count, "error")%> Unable to update this campaign: </h2>
+                <ul>
+                    <% @campaign.error.each do |e| %>
+                        <li><%= e.full_message %></li>
+                    <% end %>
+                </ul>
+            </div>
+        <% end %>
+
+        <div class="field">
+            <%= f.label :name %>
+            <%= f.text_field :name %>
+        </div>
+
+        <div class="field">
+            <%= f.label :description %>
+            <%= f.text_field :description %>
+        </div>
+
+        <div class="actions">
+            <%= f.submit %>
+        </div>
+    <% end %>
+    <%= link_to "Back", campaigns_path %>
+</div>

@@ -16,17 +16,25 @@
 
   <body class='body'>
     <header>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <p class="notice"><%= notice %></p>
+      <% elsif alert %>
+        <p class="alert"><%= alert %></p>
+      <% end %>
       <nav class='nav-bar'>
         <h1 class='nav-bar-h1'>Les ÉPIS</h1>
         <h2 class='nav-bar-h2'>Giving back to communities<h2>
         <div class='nav-bar-links'>
           <%= link_to 'Home', root_path%>
-          <%= link_to 'Sign in', new_user_session_path%>
-          <%= link_to 'Campaigns', campaigns_index_path%>
-          <a href="#">About</a>
+          <%= link_to 'Campaigns', campaigns_path%>
+          <a href="#">About us</a>
           <%# SET UP A - My Account for when user is signed in %>
+          <% if user_signed_in? %>
+            <%= link_to "My account", edit_user_registration_path %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "sign-out-btn" %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path %>
+          <% end %>
         </div>
       </nav>
     </header>

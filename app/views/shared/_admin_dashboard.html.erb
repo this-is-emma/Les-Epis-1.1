@@ -1,0 +1,13 @@
+<% if user_signed_in? and current_user.is_admin? %>
+    <div class="card m-3 p-4">
+        <h3 class="text-center">Admin dashboard </h3>
+        <h5>Hello <%= @user.first_name%> 👋 </h5>
+        <p>What do you want to do?</p>
+        <%= link_to "New campaign", new_campaign_path, class: "btn btn-primary"%>
+        <%= link_to "Edit this campaign", edit_campaign_path(@campaign), class: "btn btn-primary"%>
+        <%= button_to "Delete this campain", campaign_path(@campaign), method: :delete, class: "btn btn-danger" %>
+        <p>Close campaign</p>
+        <p>Delete campaign</p>
+        <p>Add photos</p>
+    </div>
+<% end %>

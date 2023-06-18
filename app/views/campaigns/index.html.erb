@@ -1,12 +1,10 @@
-<div class="p-3">
-  <h1>Campaigns</h1>
-
+<div class="p-3 mt-2" styles="width: 100%; height: 80%;">
   <div class="d-flex flex-row justify-content-between flex-wrap">
     <% @campaigns.each do |campaign| %>
       <div class="card mt-4" style="width: 30%; height: 20%;">
         <img class="card-img-top" src="https://images.unsplash.com/photo-1604782206219-3b9576575203?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=697&q=80" alt="Card image cap">
         <div class="card-body">
-          <p class="card-text"><%= campaign.name %></p>
+            <%= link_to "#{campaign.name}", campaign_path(campaign.id) %>
         </div>
       </div>
     <% end %>

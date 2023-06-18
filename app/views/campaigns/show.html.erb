@@ -1,2 +1,24 @@
-<h1>Campaigns#show</h1>
-<p>Find me in app/views/campaigns/show.html.erb</p>
+<article class="p-3 mt-2">
+    <div class="card text-center m-3 p-4">
+        <h1><%= @campaign.name %></h1>
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">More</a>
+            </li>
+            <%# <li class="nav-item">
+                <a class="nav-link disabled" href="#">Disabled</a>
+            </li> %>
+            </ul>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><%= @campaign.description %></p>
+            <%# Add image here ! %>
+        </div>
+    </div>
+    <%= render 'shared/admin_dashboard'%>
+</article>
+
