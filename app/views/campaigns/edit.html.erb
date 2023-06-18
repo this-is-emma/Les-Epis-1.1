@@ -3,10 +3,10 @@
     <%= form_with(model: @campaign) do |f| %>
         <% if @campaign.errors.any? %>
             <div class="alert alert-warning">
-                <h2><%= pluralize(@campaign.error.count, "error")%> Unable to update this campaign: </h2>
+                <h2><%= pluralize(@campaign.errors.count, "error")%>, unable to update this campaign because </h2>
                 <ul>
-                    <% @campaign.error.each do |e| %>
-                        <li><%= e.full_message %></li>
+                    <% @campaign.errors.each do |e| %>
+                        <p><%= e.full_message %></p>
                     <% end %>
                 </ul>
             </div>
