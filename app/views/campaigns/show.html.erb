@@ -17,9 +17,13 @@
         <div class="card-body">
             <p class="card-text"><%= @campaign.description %></p>
             <%# Add image here ! %>
-            <h3>Pledges </h3>
-            
-
+            <div>
+                <h3>Pledges</h3>
+                <% @campaign.pledges.each do |pledge| %>
+                   <p><%= pledge.user_id %>: $<%= pledge.amount %></p>
+                <% end %>
+                <%= link_to "Pledge!", new_pledge_path, class: "btn btn-primary"%>
+            </div>
         </div>
     </div>
     <%= render 'shared/admin_dashboard'%>

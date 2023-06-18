@@ -13,8 +13,8 @@ class PledgesController < ApplicationController
   end
 
   def create
-    # @pledge = Pledge.new(pledge_params)
-    # @pledge.user_id = current_user
+    @pledge = Pledge.new(pledge_params)
+    @pledge.user_id = current_user
 
     # if params[:pledge].key?(:campaigns)
     #   @campaigns = Campaign.find(

@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+    <h3 class="text-center">Your dashboard </h3>
+    <p>Hello <%= @user.first_name%> 👋 </p>
+    <h4>Your pledges: </h4>
+    <%# DISPLAY PLEDGES HERE  %>
+    <% @user.pledges.each do |pledge| %>
+        <p><%= pledge.campaign_id %>: $<%=pledge.amount%></p>
+    <% end %>
+    <p>Useful links: </p>
+    <p>Make a pledge</p>
+    <p>change my info</p>
+    <p>Contact us</p>
+    <p>log out</p>
+<% end %>

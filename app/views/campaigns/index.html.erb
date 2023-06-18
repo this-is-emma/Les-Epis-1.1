@@ -1,4 +1,4 @@
-<div class="p-3 mt-2" styles="width: 100%; height: 80%;">
+<div class="m-3 p-4" styles="width: 100%; height: 80%;">
   <div class="d-flex flex-row justify-content-between flex-wrap">
     <% @campaigns.each do |campaign| %>
       <div class="card mt-4" style="width: 30%; height: 20%;">
@@ -9,4 +9,5 @@
       </div>
     <% end %>
   </div>
+<%= render "shared/all_pledges" %>
 </div>

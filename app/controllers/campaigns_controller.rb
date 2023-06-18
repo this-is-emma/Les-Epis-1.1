@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
   def index
     @campaigns = Campaign.all
+    @pledges = Pledge.all
   end
 
   def show
