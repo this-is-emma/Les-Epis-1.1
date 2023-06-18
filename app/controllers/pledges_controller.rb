@@ -5,6 +5,7 @@ class PledgesController < ApplicationController
 
   def show
     @pledge = Pledge.find(params[:id])
+    @user = current_user
   end
 
   def new
@@ -37,7 +38,7 @@ class PledgesController < ApplicationController
   end
 
   def update
-    # 
+    #
     # @pledge = Pledge.find(params[:id])
 
     # if @pledge.update(pledge_params)
