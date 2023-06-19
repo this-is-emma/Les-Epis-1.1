@@ -4,11 +4,11 @@
     <h4>Your pledges: </h4>
     <%# DISPLAY PLEDGES HERE  %>
     <% @user.pledges.each do |pledge| %>
-        <p><%= pledge.campaign_id %>: $<%=pledge.amount%></p>
+        <p><%= Campaign.find(pledge.campaign_id).name %>: $<%=pledge.amount%></p>
     <% end %>
-    <p>Useful links: </p>
+    <%# <p>Useful links: </p>
     <p>Make a pledge</p>
     <p>change my info</p>
     <p>Contact us</p>
-    <p>log out</p>
+    <p>log out</p> %>
 <% end %>

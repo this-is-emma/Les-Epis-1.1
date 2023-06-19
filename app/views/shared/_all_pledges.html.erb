@@ -1,9 +1,29 @@
 <% if user_signed_in? and current_user.is_admin? %>
-    <div class="card p-4 mt-3">
+    <div class="card p-4 mt-3 mb-5">
         <h3 class="text-center"> All pledges</h3>
         <small id="info" class="form-text text-center text-muted">Only you can see this</small>
-        <% @pledges.each do |pledge| %>
-            <p><%= pledge.user_id %>: $<%= pledge.amount %></p>
-        <% end %>
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">Username 💁🏻‍♂️ </th>
+            <th scope="col">Amount 💸</th>
+            <th scope="col">campaign</th>
+            <th scope="col">Time 🕚</th>
+            </tr>
+        </thead>
+            <tbody>
+                <% @pledges.each do |pledge| %>
+                    <tr>
+                        <th><%= User.find(pledge.user_id).username %></th>
+                        <td class="bg-success"><%= pledge.amount %> </td>
+                        <td><%= Campaign.find(pledge.campaign_id).name %> </td>
+                        <td><%= pledge.created_at %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 <% end %>
+
+
+
