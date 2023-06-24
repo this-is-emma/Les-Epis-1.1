@@ -1,6 +1,7 @@
 class CampaignsController < ApplicationController
   def index
-    @campaigns = Campaign.all
+    # @campaigns = Campaign.all
+    @campaigns = Campaign.paginate(page: params[:page], :per_page => 3)
     @pledges = Pledge.all
   end
 

@@ -3,20 +3,16 @@
         <h1><%= @campaign.name %></h1>
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">More</a>
-            </li>
-            <%# <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
-            </li> %>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">More</a>
+                </li>
             </ul>
         </div>
         <div class="card-body">
             <p class="card-text"><%= @campaign.description %></p>
-            <%# Add image here ! %>
             <div>
                 <h3>Pledges</h3>
                 <% @campaign.pledges.each do |pledge| %>
