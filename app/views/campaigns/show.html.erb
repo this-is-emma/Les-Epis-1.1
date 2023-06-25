@@ -18,7 +18,11 @@
                 <% @campaign.pledges.each do |pledge| %>
                    <p><%= pledge.user_id %>: $<%= pledge.amount %></p>
                 <% end %>
-                <%= link_to "Pledge!", new_pledge_path, class: "btn btn-primary"%>
+                <% if user_signed_in? %>
+                 <%= link_to "Pledge!", new_pledge_path, class: "btn btn-primary"%>
+                <% else %>
+                    <%= link_to "Sign in to create a pledge!", new_user_session_path, class: "btn btn-primary" %>
+                <% end %>
             </div>
         </div>
     </div>
