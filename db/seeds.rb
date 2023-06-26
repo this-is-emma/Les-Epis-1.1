@@ -21,16 +21,6 @@ User.create!(
   is_admin: true,
 )
 
-User.create!(
-  email: 'mangama@icloud.com',
-  first_name: 'Marthe',
-  last_name: 'Angama',
-  username: 'maetel',
-  phone_number: 1234567890,
-  password: 'Dimanche123',
-  is_admin: true,
-)
-
 # 10.times do
 #   name = Faker::Commerce.department
 #   description = Faker::Quotes::Shakespeare.hamlet_quote
