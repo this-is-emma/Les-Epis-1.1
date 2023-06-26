@@ -39,7 +39,7 @@ description = Faker::Quotes::Shakespeare.hamlet_quote
 Campaign.create!(
   name: name,
   description: description,
-  user_id: 1
+  user_id: USer.ids.sample
 )
 
 10.times do
@@ -48,7 +48,7 @@ Campaign.create!(
   Pledge.create!(
     amount: amount,
     campaign_id: Campaign.ids.sample,
-    user_id: 1
+    user_id: User.ids.sample
   )
 end
 
