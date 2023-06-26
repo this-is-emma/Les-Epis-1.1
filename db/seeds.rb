@@ -21,16 +21,25 @@ User.create!(
   is_admin: true,
 )
 
-10.times do
-  name = Faker::Commerce.department
-  description = Faker::Quotes::Shakespeare.hamlet_quote
+# 10.times do
+#   name = Faker::Commerce.department
+#   description = Faker::Quotes::Shakespeare.hamlet_quote
 
-  Campaign.create!(
-    name: name,
-    description: description,
-    user_id: 1
-  )
-end
+#   Campaign.create!(
+#     name: name,
+#     description: description,
+#     user_id: 1
+#   )
+# end
+
+name = Faker::Commerce.department
+description = Faker::Quotes::Shakespeare.hamlet_quote
+
+Campaign.create!(
+  name: name,
+  description: description,
+  user_id: 1
+)
 
 10.times do
   amount = Faker::Commerce.price
