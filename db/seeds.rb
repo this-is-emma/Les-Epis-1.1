@@ -39,7 +39,7 @@ description = Faker::Quotes::Shakespeare.hamlet_quote
 Campaign.create!(
   name: name,
   description: description,
-  user_id: USer.ids.sample
+  user_id: User.ids.sample
 )
 
 10.times do
