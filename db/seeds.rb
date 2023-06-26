@@ -8,8 +8,8 @@
 
 puts '🌱 ...'
 
-Campaign.destroy_all
 Pledge.destroy_all
+Campaign.destroy_all
 
 User.create!(
   email: 'mangama@icloud.com',
@@ -56,7 +56,7 @@ Campaign.create!(
 
   Pledge.create!(
     amount: amount,
-    campaign_id: 1,
+    campaign_id: Campaign.ids.sample,
     user_id: 1
   )
 end
