@@ -10,6 +10,7 @@ puts '🌱 ...'
 
 Pledge.destroy_all
 Campaign.destroy_all
+User.destroy_all
 
 User.create!(
   email: 'mangama@icloud.com',
