@@ -1,0 +1,23 @@
+<%= javascript_include_tag('navbar.js')%>
+<nav class='nav-bar'>
+    <h1 class='nav-bar-h1'>Les ÉPIS</h1>
+    <h2 class='nav-bar-h2'>Giving back to communities<h2>
+    <div class='hamburger-menu-div'>
+        <button class="hamburger-menu">
+            <i id="toggle-mobile-menu" class="fa-solid fa-bars fa-lg"></i>
+        </button>
+    </div>
+    <div id="nav-bar-links" class='nav-bar-links-desktop'>
+        <%= link_to 'Home', root_path%>
+        <%= link_to 'Campaigns', campaigns_path%>
+        <%= link_to 'About us', about_index_path%>
+
+        <%# SET UP A - My Account for when user is signed in %>
+        <% if user_signed_in? %>
+        <%= link_to "My account", edit_user_registration_path %>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "sign-out-btn" %>
+        <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+        <% end %>
+    </div>
+</nav>
